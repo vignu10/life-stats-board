@@ -1,0 +1,62 @@
+# General Code Style & Formatting
+	•	Follow the Airbnb Style Guide for JavaScript/TypeScript formatting.
+	•	Use PascalCase for React Native component filenames (e.g., UserProfile.tsx, not user-profile.tsx).
+	•	Prefer named exports over default exports for components.
+	•	Always strongly type props and states using TypeScript interfaces or types.
+
+⸻
+
+# Project Structure & Architecture
+	•	Organize screens under a /screens directory, components under /components, and utilities under /utils.
+	•	Use a feature-based or domain-based folder structure (group related screens, components, services).
+	•	Navigation should be handled using React Navigation.
+	•	Prefer modular navigation stacks (separate navigators per feature if needed).
+	•	Use Expo unless there’s a strong reason to eject.
+
+⸻
+
+# Styling & UI
+	•	Use StyleSheet.create for defining styles (not inline styles directly in JSX).
+	•	Prefer using TailwindCSS for React Native (e.g., tailwindcss-react-native) for utility-first styling.
+	•	Use native-base or shadcn/ui for React Native for ready-made UI components.
+	•	Maintain consistent spacing, font sizes, and colors via a centralized theme file (e.g., theme.ts).
+
+⸻
+
+# Data Fetching & Forms
+	•	Use TanStack Query (@tanstack/react-query) for data fetching, caching, and server state management.
+	•	Use React Hook Form for form handling.
+	•	Validate all form data with Zod integrated into React Hook Form.
+	•	Validate API responses client-side using Zod schemas.
+
+⸻
+
+# State Management & Logic
+	•	Use TanStack Query for server state management (remote API data, cache, etc.).
+	•	Use React Context for simple local/global state (e.g., user session, settings).
+	•	If state complexity grows, use a lightweight manager like Zustand for local state.
+
+⸻
+
+# Backend & API
+	•	Communicate with backend APIs using Axios (via a custom wrapper apiClient.ts).
+	•	Use Zod to validate API responses on the client side.
+	•	For offline capabilities, integrate TanStack Query’s cache persistence with AsyncStorage.
+
+⸻
+
+# Database (Local)
+	•	Use SQLite via libraries like expo-sqlite or WatermelonDB for local offline data.
+	•	Implement background syncs for remote database updates if necessary.
+
+⸻
+
+# Testing
+	•	Use Jest and React Native Testing Library for unit and integration tests.
+	•	Write end-to-end tests with Detox for user-flow testing on devices.
+
+⸻
+
+# DevOps & CI/CD
+	•	Use Expo Application Services (EAS) for building and OTA updates.
+	•	Set up CI/CD pipelines using GitHub Actions or Bitrise for automated builds and tests.
